@@ -26,25 +26,6 @@ You can start chatting with Bookbot directly from the interface by clicking the 
 │── assets/ # Images, icons, and other static files
 │── README.md # Project documentation
 
-
-## ⚙️ Setup Instructions
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/himanshu040905/Book-Reccomendation.git
-
-
-Open index.html in your browser to run locally.
-
-Update your Watson Assistant credentials in the <script> section:
-
-javascript
-Copy
-Edit
-integrationID: "your-integration-id",
-region: "your-region",
-serviceInstanceID: "your-service-instance-id",
-Deploy the project to your preferred hosting service.
-
 ✨ Author
 Himanshu Chauhan
 Made with ❤️ and powered by IBM Watson Assistant.
