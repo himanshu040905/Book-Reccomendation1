@@ -30,7 +30,7 @@ You can start chatting with Bookbot directly from the interface by clicking the 
 ## ⚙️ Setup Instructions
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/bookbot.git
+   git clone https://github.com/himanshu040905/Book-Reccomendation.git
 
 
 Open index.html in your browser to run locally.
