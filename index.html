@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bookbot</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(rgba(20, 20, 30, 0.85), rgba(20, 20, 30, 0.85)),
+                  url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1740&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 8px;
+      color: #aee1f9;
+      text-shadow: 0 0 10px rgba(174, 225, 249, 0.6);
+    }
+
+    p {
+      font-size: 1.05rem;
+      max-width: 500px;
+      color: #e0d7f5;
+      margin-bottom: 25px;
+      line-height: 1.6;
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+    }
+
+    .chat-box {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 30px 40px;
+      border-radius: 18px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .btn {
+      background: linear-gradient(45deg, #6dd5ed, #8e44ad);
+      color: white;
+      padding: 14px 36px;
+      border: none;
+      border-radius: 50px;
+      font-size: 1rem;
+      cursor: pointer;
+      font-weight: 600;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 15px rgba(141, 92, 196, 0.4);
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(141, 92, 196, 0.6);
+    }
+
+    footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.85rem;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="chat-box">
+    <h1>📚 Bookbot</h1>
+    <p>Bookbot is your friendly AI-powered reading companion, here to help you discover your next favorite read. Whether you’re looking for books by genre, author, or language, I’ll provide personalized recommendations just for you. From mystery and romance to fantasy and self-help, I’ve got suggestions to match every mood. Let’s start your reading journey today!</p>
+    <button class="btn" onclick="startChat()">Start Chatting</button>
+  </div>
+
+  <footer>
+    Powered by Watson Assistant • Made by Himanshu Chauhan
+  </footer>
+
+  <!-- Watson Assistant Script -->
+  <script>
+    function startChat() {
+      window.watsonAssistantChatOptions = {
+        integrationID: "d5faf539-0cbe-4aea-9763-1c65e11a5434",
+        region: "au-syd",
+        serviceInstanceID: "f3fffdb0-b200-4cad-a802-cab6eba17679",
+        onLoad: async (instance) => { await instance.render(); }
+      };
+      setTimeout(function(){
+        const t=document.createElement('script');
+        t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + 
+               (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+        document.head.appendChild(t);
+      });
+    }
+  </script>
+</body>
+</html>
+
